@@ -1,6 +1,6 @@
 # CentOS 7 Tesseract-OCR 5.0.0 설치
 
-CentOS 7 에서 최신버전 Tesseract-OCR 설치방법을 정리합니다. [공식홈페이지](https://github.com/tesseract-ocr/tesseract/wiki)에서 yum으로 설치하는 방법을 안내하고 있다.
+CentOS 7 에서 최신버전 Tesseract-OCR 설치방법을 정리합니다. [공식홈페이지](https://github.com/tesseract-ocr/tesseract/wiki)에서 yum으로 설치하는 방법을 안내하고 있습니다.
 하지만 설치되는 버전이 4.x라서 소스코드를 직접 다운받아 compile해서 설치하는 방법을 정리합니다. CentOS Linux release 7.7.1908 (Core) 환경에서 테스트 했습니다.
 
 ## 필수 Libray 설치
@@ -41,14 +41,15 @@ export PKG_CONFIG_PATH=/usr/local/leptonica-1.79.0/lib/pkgconfig
 git clone https://github.com/tesseract-ocr/tesseract.git
 cd tesseract
 ./autogen.sh
-./configure --prefix=/usr/local/tesseract-5.0 
+./configure --prefix=/usr/local/tesseract-5.0
 make
 make install
 ```
 
 ## traineddata 추가
 
-[공식홈페이지](https://github.com/tesseract-ocr/tesseract/wiki)에서 다른 언어팩들을 다운받아서 사용할 수 있다.
+[공식홈페이지](https://github.com/tesseract-ocr/tesseract/wiki)에서 다른 언어팩들을 다운받아서 사용할 수 있습니다.
+
 ```bash
 cp -r ${file_upload_path}/kor.traineddata /usr/local/tesseract-5.0/share/tessdata
 cp -r ${file_upload_path}/eng.traineddata /usr/local/tesseract-5.0/share/tessdata
@@ -65,7 +66,7 @@ export TESSDATA_PREFIX=/usr/local/tesseract-5.0/share/tessdata
 
 ## 모듈 실행 확인
 
--l 옵션을 활용하여 언어 설정을 변경할 수 있다. 결과파일은 지정한 이름에 자동으로 확장자가 .txt추가 되어 저장됩니다.
+-l 옵션을 활용하여 언어 설정을 변경할 수 있습니다. 결과파일은 지정한 이름에 자동으로 확장자가 .txt추가 되어 저장됩니다.
 
 ```bash
 # Check version
