@@ -1,4 +1,5 @@
 # CentOS 7 Tesseract-OCR 5.0.0 설치
+
 CentOS 7 에서 최신버전 Tesseract-OCR 설치방법을 정리합니다. [공식홈페이지](https://github.com/tesseract-ocr/tesseract/wiki)에서 yum으로 설치하는 방법을 안내하고 있다.
 하지만 설치되는 버전이 4.x라서 소스코드를 직접 다운받아 compile해서 설치하는 방법을 정리합니다. CentOS Linux release 7.7.1908 (Core) 환경에서 테스트 했습니다.
 
@@ -73,6 +74,6 @@ tesseract -v
 tesseract -l eng $TEST_IMAGE $RESULT_FILE
 ```
 
-### Reference
+### 참고자료
 
-* https://linuxcluster.wordpress.com/2020/02/03/compiling-leptonica-on-centos-7/
+* [compiling-leptonica-on-centos-7](https://linuxcluster.wordpress.com/2020/02/03/compiling-leptonica-on-centos-7)
