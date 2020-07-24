@@ -1,10 +1,12 @@
 # CentOS 7에서 TensorFlow 2.0 GPU 설치
 
-이 글에서는 NVIDIA 그래픽 카드가 장착된 CentOS 7에서 TensorFlow GPU를 설치하는 방법을 정리합니다. [TensorFlow 공식 홈페이지](https://www.tensorflow.org/install/gpu?hl=ko)를 보면 TensorFlow GPU를 사용하기 위해 `NVIDIA GPU Driver, CUDA Toolkit, cuDNN SDK`가 필요하다고 안내하고 있습니다. NVIDIA GPU Driver는 RPM 패키지를 이용해 설치하고, CUDA Toolkit과 cuDNN SDK은 [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-docker)을 활용해 설치합니다. 모든 설정이 끝나면 아래 그림과 같은 아키텍처가 됩니다.
+이 글에서는 NVIDIA 그래픽 카드가 장착된 CentOS 7에서 TensorFlow GPU를 설치하는 방법을 정리합니다.  
+[TensorFlow 공식 홈페이지](https://www.tensorflow.org/install/gpu?hl=ko)를 보면 TensorFlow GPU를 사용하기 위해 `NVIDIA GPU Driver, CUDA Toolkit, cuDNN SDK`가 필요하다고 안내하고 있습니다.  
+NVIDIA GPU Driver는 RPM 패키지를 이용해 설치하고, CUDA Toolkit과 cuDNN SDK은 [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-docker)을 활용해 설치합니다. 모든 설정이 끝나면 아래 그림과 같은 아키텍처가 됩니다.
 
 ![NVIDIA Container Toolkit](./images/NVIDIA-Container-Toolkit.png)
 
-## NVIDIA Driver 설치
+# NVIDIA Driver 설치
 
 NVIDIA 공식 홈페이지에 나와 있는 [설치 방법](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#package-manager-installation)을 참고하여 진행합니다.
 
@@ -55,9 +57,9 @@ Thu Jul 23 17:00:12 2020
 +-----------------------------------------------------------------------------+
 ```
 
-## CUDA Toolkit & cuDNN 설치
+# CUDA Toolkit & cuDNN 설치
 
-### Docker CE 설치
+## Docker CE 설치
 
 `nvidia-docker`를 사용하기 위해 Docker 19.03 버전 이상을 설치합니다.
 
@@ -74,7 +76,7 @@ docker version
 docker run hello-world
 ```
 
-### NVIDIA Container Toolkit 설치
+## NVIDIA Container Toolkit 설치
 
 ```bash
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
