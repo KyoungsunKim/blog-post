@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'com.ksnote'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.31'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+    implementation 'org.aspectj:aspectjrt:1.9.7'
+    implementation 'org.aspectj:aspectjweaver:1.9.7'
+
+    compileOnly 'org.projectlombok:lombok:1.16.20'
+    annotationProcessor 'org.projectlombok:lombok:1.16.20'
+    testCompileOnly 'org.projectlombok:lombok:1.16.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.16.20'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
